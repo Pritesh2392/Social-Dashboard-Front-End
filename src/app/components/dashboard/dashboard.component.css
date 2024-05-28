@@ -1,0 +1,10 @@
+.mapboxgl-marker {
+    background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
+  }
+
+  #map {
+    overflow: hidden;
+    box-shadow: 0 0 10px 3px rgb(0 0 0 / 10%);
+    padding:10px;
+    height:100%;
+}

@@ -1,0 +1,73 @@
+<form [formGroup]="socialmedia" (ngSubmit)="onSubmitSocialMedia()">
+  <div class="row">
+      <div class="col text-center p-2 mb-3 bg-light">
+          <span class="fs-3">Social Media Profile</span>
+      </div>
+  </div>
+  <input type="hidden" id="userId"formControlName="userId"/>
+  <div class="row">
+      <div class="col mb-3">
+              <label for="facebook" class="form-label">Facebook Link</label>
+              <input type="text" class="form-control" id="facebook" formControlName="facebookLink">
+              <div [hidden]="facebookLink.valid || facebookLink.untouched" class="text-danger">  
+                  <div [hidden]="!facebookLink.hasError('required')">  
+                      facebook Link is required.  
+                  </div>    
+      </div>
+      </div>
+      <div class="col mb-3">
+          <label for="instagram" class="form-label">Instagram Link</label>
+          <input type="text" class="form-control" id="instagram" formControlName="instagramLink">
+          <div [hidden]="instagramLink.valid || instagramLink.untouched" class="text-danger">  
+              <div [hidden]="!instagramLink.hasError('required')">  
+                  Instagram Link is required.  
+              </div>    
+  </div>
+  </div>
+  </div>
+  <div class="row">
+      <div class="col">
+              <label for="twitter" class="form-label">Twitter Link</label>
+              <input type="text" class="form-control" id="twitter" formControlName="twitterLink">
+              <div [hidden]="twitterLink.valid || twitterLink.untouched" class="text-danger">  
+                  <div [hidden]="!twitterLink.hasError('required')">  
+                      Twitter Link is required.  
+                  </div>
+              </div>
+      </div>
+      <div class="col">
+          <label for="otherlink" class="form-label">other Link</label>
+          <input type="text" class="form-control" id="otherlink" formControlName="OtherLink">
+          <div [hidden]="OtherLink.valid || OtherLink.untouched" class="text-danger">  
+              <div [hidden]="!OtherLink.hasError('required')">  
+                  otherLink is required.  
+              </div>
+          </div>
+  </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <label for="longitude" class="form-label">Longitude</label>
+          <input type="text" class="form-control" id="currentlongitude" formControlName="currentlongitude">
+          <div [hidden]="currentlongitude.valid || currentlongitude.untouched" class="text-danger">  
+              <div [hidden]="!currentlongitude.hasError('required')">  
+                Longitude is required.  
+              </div>
+          </div>
+  </div>
+  <div class="col">
+              <label for="lattitude" class="form-label">Lattitude</label>
+              <input type="text" class="form-control" id="currentlatitude" formControlName="currentlatitude">
+              <div [hidden]="currentlatitude.valid || currentlatitude.untouched" class="text-danger">  
+                  <div [hidden]="!currentlatitude.hasError('required')">  
+                      Lattitude Site is required.  
+                  </div>
+              </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-3 mt-5 mb-4">
+            <button class="btn btn-md btn-primary" type="submit"[disabled]="!socialmedia.valid">Save</button>
+        </div>
+  </div>
+</form>

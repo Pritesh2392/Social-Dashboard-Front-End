@@ -1,0 +1,97 @@
+<form [formGroup]="registerform" (ngSubmit)="onSubmitregistration()">
+    <div class="row">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Register</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" formControlName="firstname">
+                <div [hidden]="firstname.valid || firstname.untouched" class="text-danger">  
+                    <div [hidden]="!firstname.hasError('required')">  
+                        first name is required.  
+                    </div>    
+                    <div [hidden]="!firstname.hasError('maxlength')">  
+                        first name can not be greater than 50 characters.  
+                  </div>  
+                    <div [hidden]="!firstname.hasError('minlength')">  
+                        first name can not be shorter than 4 characters.  
+                  </div>
+        </div>
+        </div>
+        <div class="col mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" formControlName="lastname">
+            <div [hidden]="lastname.valid || lastname.untouched" class="text-danger">  
+                <div [hidden]="!lastname.hasError('required')">  
+                    last name is required.  
+                </div>    
+                <div [hidden]="!lastname.hasError('maxlength')">  
+                    last name can not be greater than 50 characters.  
+              </div>  
+                <div [hidden]="!lastname.hasError('minlength')">  
+                    last name can not be shorter than 4 characters.  
+              </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                <div [hidden]="mobile.valid || mobile.untouched" class="text-danger">  
+                    <div [hidden]="!mobile.hasError('required')">  
+                        Mobile No is required.  
+                    </div>
+                    <div [hidden]="!mobile.hasError('minlength')">  
+                      Mobile No can not be shorter than 10 digits.  
+                  </div>  
+                    <div [hidden]="!mobile.hasError('maxlength')">  
+                      Mobile No can not be greater than 10 digits.  
+                  </div>  
+                    <div [hidden]="!mobile.hasError('pattern')">  
+                      Enter proper mobile no.
+                  </div>  
+                </div>
+        </div>
+        <div class="col">
+            <label for="userpassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="userpassword" formControlName="userpassword">
+            <div [hidden]="userpassword.valid || userpassword.untouched" class="text-danger">  
+                <div [hidden]="!userpassword.hasError('required')">  
+                    Password is required.  
+                </div>
+            </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="userconfpassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="userconfpassword" formControlName="userconfpassword">
+            <div [hidden]="userconfpassword.valid || userconfpassword.untouched" class="text-danger">  
+                <div [hidden]="!userconfpassword.hasError('required')">  
+                    ConfirmPassword No is required.  
+                </div>
+            </div>
+    </div>
+    <div class="col">
+                <label for="referenceSite" class="form-label">Where you heard About Us</label>
+                <input type="text" class="form-control" id="referencesite" formControlName="referencesite">
+                <div [hidden]="referencesite.valid || referencesite.untouched" class="text-danger">  
+                    <div [hidden]="!referencesite.hasError('required')">  
+                        Refrence Site is required.  
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 mt-5 mb-4">
+              <button class="btn btn-md btn-primary" type="submit"[disabled]="!registerform.valid">Sign up</button>
+          </div>
+          <div class="col-3">
+            <hr class="mt-5 mb-4 border-secondary-subtle">
+            <p class="m-0 text-secondary text-end">Already have an account?<a routerLink="/login">Login</a>
+    </div>
+    </div>
+</form>
